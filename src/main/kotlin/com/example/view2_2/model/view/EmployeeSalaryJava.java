@@ -8,15 +8,15 @@ import javax.persistence.Id;
 
 @Entity
 @Immutable
-@Subselect("" +
-        "SELECT e.id as employee_id,\n" +
-        "       concat(e.first_name, ' ', e.last_name) as name,\n" +
-        "       e.salary as salary,\n" +
-        "       j.title as title,\n" +
-        "       d.name as department_name\n" +
-        "FROM employees e\n" +
-        "         INNER JOIN departments d on e.department_id = d.id\n" +
-        "         INNER JOIN jobs j on e.job_id = j.id")
+@Subselect("SELECT " +
+        "e.id AS employee_id, " +
+        "concat(e.first_name, ' ', e.last_name) as name, " +
+        "e.salary AS salary, " +
+        "j.title AS job_title, " +
+        "d.name AS departament_name " +
+        "FROM employees e " +
+        "INNER JOIN departments d ON e.department_id = d.id " +
+        "INNER JOIN jobs j ON e.job_id = j.id")
 public class EmployeeSalaryJava {
 
     @Id

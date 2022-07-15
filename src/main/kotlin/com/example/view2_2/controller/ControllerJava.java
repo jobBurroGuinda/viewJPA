@@ -18,7 +18,7 @@ public class ControllerJava {
 
     @GetMapping("")
     public String saludo(){
-        return "Hola mundote desde Java!";
+        return "Hola mundito desde Java!";
     }
 
     @GetMapping("/findAll")

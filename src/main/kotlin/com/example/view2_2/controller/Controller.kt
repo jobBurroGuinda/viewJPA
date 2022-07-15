@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RestController
 
 @RestController
-@RequestMapping("/kotlin")
+@RequestMapping("")
 class Controller {
 
     @Autowired
@@ -16,7 +16,7 @@ class Controller {
 
     @GetMapping("")
     fun saludo():String?{
-        return "Hola mundote!"
+        return "Hola mundito!"
     }
 
     @GetMapping("/findAll")
